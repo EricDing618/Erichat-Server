@@ -2,16 +2,25 @@ package org.ericding618;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.lang.String;
+import com.google.gson.*;
 
 public class Main{
     double VERSION = 0.1; //服务端的版本
     String SIGN_IN = "sign:";
     String QUIT = "quit:";
+    static String GetSettings() {
+        try (FileReader settings = new FileReader("...../settings.json")){
 
+        } catch (FileNotFoundException){
+
+        }
+    }
     public String GetTime(){ //获取当前时间，并以“年:月:日 时:分:秒”的格式输出
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
