@@ -9,14 +9,13 @@ import java.lang.String;
 
 public class Main{
     double VERSION = 0.1; //服务端的版本
-    String SIGNIN = "sign:";
+    String SIGN_IN = "sign:";
     String QUIT = "quit:";
 
     public String GetTime(){ //获取当前时间，并以“年:月:日 时:分:秒”的格式输出
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        String DateTime = now.format(formatter);
-        return DateTime;
+        return now.format(formatter);
     }
 
     public String GetOS(){
@@ -70,13 +69,13 @@ public class Main{
                     System.out.println("Quit successfully.");
                     quit = 1;
 
-                }else if (cmds.get(0).toString().equals("help")){
+                }else if (cmds.getFirst().equals("help")){
                     System.out.println("ok");
 
-                }else if (cmds.get(0).toString().equals("login")){
+                }else if (cmds.getFirst().equals("login")){
 
                 }else{
-                    System.out.println("异常：没有命名为“"+cmds.get(0).toString()+"”的命令，请输入“help”获取命令帮助。");
+                    System.out.println("异常：没有命名为“"+cmds.getFirst()+"”的命令，请输入“help”获取命令帮助。");
                 }
             }
         }
