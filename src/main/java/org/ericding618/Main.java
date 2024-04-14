@@ -19,10 +19,10 @@ public class Main{
     double VERSION = 0.1; //服务端的版本
     String SIGN_IN = "sign:";
     String QUIT = "quit:";
-    String resources_dir = Paths.get(".").toAbsolutePath().normalize().getParent().toString()+"resources";
-    public String GetSettings() {
+    String resources_dir = Paths.get("./src/main/java").toAbsolutePath().normalize().toString()+"\\resources";
+    public void GetSettings() {
         try {
-            Path jsonpath = Path.of(resources_dir+"/settings.json");
+            Path jsonpath = Path.of(resources_dir+"\\settings.json");
             String user_config = Files.readString(jsonpath);
             GsonBuilder jsonBuilder = new GsonBuilder();
             jsonBuilder.disableHtmlEscaping();
@@ -71,6 +71,7 @@ public class Main{
     }
 
     public void App() {
+        PrintTimeSleep(resources_dir);
         PrintTimeSleep("欢迎使用FutureChat Server（v"+VERSION+"）！");
         PrintTimeSleep("当前时间为："+GetTime()+" 。");
         PrintTimeSleep("检测：本程序正在"+GetOS()+"操作系统上运行。");
