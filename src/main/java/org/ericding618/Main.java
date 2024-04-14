@@ -4,21 +4,34 @@ package org.ericding618;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.lang.String;
 import com.google.gson.*;
+import com.google.gson.stream.JsonReader;
 
 public class Main{
     double VERSION = 0.1; //服务端的版本
     String SIGN_IN = "sign:";
     String QUIT = "quit:";
-    static String GetSettings() {
-        try (FileReader settings = new FileReader("...../settings.json")){
-
-        } catch (FileNotFoundException){
-
+    String resources_dir = Paths.get(".").toAbsolutePath().normalize().getParent().toString()+"resources";
+    public String GetSettings() {
+        try {
+            Path jsonpath = Path.of(resources_dir+"/settings.json");
+            String user_config = Files.readString(jsonpath);
+            GsonBuilder jsonBuilder = new GsonBuilder();
+            jsonBuilder.disableHtmlEscaping();
+            Gson gson = jsonBuilder.create();
+        } catch (FileNotFoundException e){
+            System.out.println("异常：没有找到配置文件settings.json。");
+        } catch (IOException e) {
+            System.out.println("异常：IO错误。");
+            //throw new RuntimeException(e);
         }
     }
     public String GetTime(){ //获取当前时间，并以“年:月:日 时:分:秒”的格式输出
@@ -57,7 +70,7 @@ public class Main{
         System.out.print("\n");
     }
 
-    public void Input() {
+    public void App() {
         PrintTimeSleep("欢迎使用FutureChat Server（v"+VERSION+"）！");
         PrintTimeSleep("当前时间为："+GetTime()+" 。");
         PrintTimeSleep("检测：本程序正在"+GetOS()+"操作系统上运行。");
@@ -92,7 +105,7 @@ public class Main{
 
     public static void main(String[] args) { // 运行
         Main run = new Main();
-        run.Input();
+        run.App();
 
     }
 }
