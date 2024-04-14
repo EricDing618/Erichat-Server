@@ -4,5 +4,6 @@
   "title": "New Chat Server",
   "text": "This is my server!",
   "ext": null,
-  "blacklist_file": "./"
+  "blacklist_file": "black.json",
+  "admin_list_file": "admin.json",
 }
