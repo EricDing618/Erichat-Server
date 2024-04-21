@@ -1,17 +1,10 @@
 package org.ericding618;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.FileReader;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.lang.String;
-import com.google.gson.*;
-import com.google.gson.reflect.TypeToken;
 
 import org.ericding618.JsonTool;
 
@@ -20,24 +13,7 @@ public class Main{
     String SIGN_IN = "sign:";
     String QUIT = "quit:";
     String resources_dir = Paths.get("./src/main/java").toAbsolutePath().normalize() +"\\resources";
-    public Map GetSettings() throws JsonSyntaxException {
-        var map = new HashMap<String, Object>();
-        try {
-            Path jsonpath = Path.of(resources_dir+"\\settings.json");
-            String user_config = Files.readString(jsonpath);
-            GsonBuilder jsonBuilder = new GsonBuilder();
-            jsonBuilder.disableHtmlEscaping();
-            Gson gson = jsonBuilder.create();
-            map = gson.fromJson(user_config, new TypeToken<Map<String, Object>>(){}.getType());
-            //System.out.println(map.get(""));
-        } catch (FileNotFoundException e){
-            System.out.println("异常：没有找到配置文件settings.json。");
-        } catch (IOException e) {
-            System.out.println("异常：IO错误。");
-            throw new RuntimeException(e);
-        }
-        return map;
-    }
+
     public String GetTime(){ //获取当前时间，并以“年:月:日 时:分:秒”的格式输出
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -81,8 +57,9 @@ public class Main{
         PrintTimeSleep("检测：本程序正在"+GetOS()+"操作系统上运行。");
         PrintTimeSleep("您可以输入“help”获取命令帮助，或者输入“quit”以退出程序。");
         PrintTimeSleep("您还可以输入其他命令，例如“login”或“create”。");
-        Map a = GetSettings();
-        System.out.println(a);
+        JsonTool readset = new JsonTool();
+        Map a = readset.writeMapToJson();
+        System.out.println(readset.);
         int quit = 0;
         while (quit == 0){
             Scanner scan = new Scanner(System.in);
@@ -108,7 +85,9 @@ public class Main{
             }
         }
     }
+    public void RunCommand() {
 
+    }
     public static void main(String[] args) { // 运行
         Main run = new Main();
         run.App();

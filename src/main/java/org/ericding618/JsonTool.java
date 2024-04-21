@@ -20,7 +20,8 @@ public class JsonTool {
      * @return 解析后的Map
      * @throws IOException 文件读取异常
      * @throws JsonSyntaxException JSON语法异常*/
-    public static Map<String, Object> parseJSONToMap(String filePath) throws IOException, JsonSyntaxException {
+
+    public Map<String, Object> parseJSONToMap(String filePath) throws IOException, JsonSyntaxException {
         Gson json = new Gson();
         // 使用FileReader读取JSON文件
         try (FileReader reader = new FileReader(filePath)) {
@@ -29,7 +30,7 @@ public class JsonTool {
         }
     }
 
-    public static void writeMapToJson(String filePath, Map<String, Object> map) throws IOException {
+    public void writeMapToJson(String filePath, Map<String, Object> map) throws IOException {
         // 创建GsonBuilder并设置漂亮打印
         GsonBuilder gsonBuilder = new GsonBuilder();
         gsonBuilder.setPrettyPrinting();
