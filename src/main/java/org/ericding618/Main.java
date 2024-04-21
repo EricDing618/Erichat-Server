@@ -1,9 +1,8 @@
 package org.ericding618;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.FileReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -13,6 +12,8 @@ import java.time.format.DateTimeFormatter;
 import java.lang.String;
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
+
+import org.ericding618.JsonTool;
 
 public class Main{
     double VERSION = 0.1; //服务端的版本
@@ -33,7 +34,7 @@ public class Main{
             System.out.println("异常：没有找到配置文件settings.json。");
         } catch (IOException e) {
             System.out.println("异常：IO错误。");
-            //throw new RuntimeException(e);
+            throw new RuntimeException(e);
         }
         return map;
     }
