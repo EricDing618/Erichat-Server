@@ -9,6 +9,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 
@@ -21,12 +23,21 @@ public class JsonTool {
      * @throws IOException 文件读取异常
      * @throws JsonSyntaxException JSON语法异常*/
 
-    public Map<String, Object> parseJSONToMap(String filePath) throws IOException, JsonSyntaxException {
+    public Map<String,Object> parseJSONToMapObject(String filePath) throws IOException, JsonSyntaxException {
         Gson json = new Gson();
         // 使用FileReader读取JSON文件
         try (FileReader reader = new FileReader(filePath)) {
             // 使用Gson从JSON文件中解析Map
             return json.fromJson(reader, new TypeToken<Map<String, Object>>(){}.getType());
+        }
+    }
+
+    public Map<String, List> parseJSONToMapList(String filePath) throws IOException, JsonSyntaxException {
+        Gson json = new Gson();
+        // 使用FileReader读取JSON文件
+        try (FileReader reader = new FileReader(filePath)) {
+            // 使用Gson从JSON文件中解析Map
+            return json.fromJson(reader, new TypeToken<Map<String, List>>(){}.getType());
         }
     }
 
@@ -47,5 +58,6 @@ public class JsonTool {
             writer.flush();
         }
     }
+
 }
 

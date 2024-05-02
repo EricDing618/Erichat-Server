@@ -1,5 +1,5 @@
 {
-  "client_text": [
+  "client_texts": [
     "sign",
     "quit",
     "msg",
@@ -8,5 +8,9 @@
     "img",
     "video",
     "music"
+  ],
+  "CommandList": [
+    "help",
+    "login"
   ]
 }
