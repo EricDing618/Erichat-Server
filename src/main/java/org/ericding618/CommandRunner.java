@@ -16,7 +16,7 @@ public class CommandRunner {
             return value;
         }catch (Exception e){
             System.out.println("错误：配置损坏。");
-            e.printStackTrace();
+            //e.printStackTrace();
             return false;
         }
     }
