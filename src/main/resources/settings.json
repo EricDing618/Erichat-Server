@@ -1,9 +1,0 @@
-{
-  "host": "127.0.0.1",
-  "port": 4567,
-  "title": "New Chat Server",
-  "text": "This is my server!",
-  "ext": null,
-  "blacklist_file": "black.json",
-  "admin_list_file": "admin.json",
-}
