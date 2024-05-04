@@ -1,19 +1,12 @@
 package org.ericding618;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.Paths;
 import java.util.*;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.lang.String;
-
-import org.ericding618.JsonTool;
-import org.ericding618.tools;
 
 public class Main{
     double VERSION = 0.1; //服务端的版本
-    tools tool = new tools();
+    Tools tool = new Tools();
 
     public void App() throws IOException {
         tool.PrintTimeSleep(tool.GetResourcePath(""));

@@ -2,12 +2,10 @@ package org.ericding618;
 
 import java.util.List;
 import java.util.Map;
-import org.ericding618.JsonTool;
-import org.ericding618.tools;
 
 public class CommandRunner {
     JsonTool CommandJson = new JsonTool();
-    tools tool = new tools();
+    Tools tool = new Tools();
 
     public Boolean CommandNameIsTrue(String cmd) {
         try {

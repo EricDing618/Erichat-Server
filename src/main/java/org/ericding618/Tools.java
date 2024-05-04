@@ -4,7 +4,7 @@ import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class tools {
+public class Tools {
     public String GetResourcePath(String FileName) {
         String resources_dir = Paths.get("./src/main/java").toAbsolutePath().normalize() +"\\resources\\";
         return resources_dir+FileName;
