@@ -13,8 +13,6 @@ import org.ericding618.tools;
 
 public class Main{
     double VERSION = 0.1; //服务端的版本
-    String SIGN_IN = "sign:";
-    String QUIT = "quit:";
     tools tool = new tools();
 
     public void App() throws IOException {
