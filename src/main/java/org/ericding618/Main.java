@@ -25,11 +25,7 @@ public class Main{
         tool.PrintTimeSleep("您可以输入“help”获取命令帮助，或者输入“quit”以退出程序。");
         tool.PrintTimeSleep("您还可以输入其他命令，例如“login”或“create”。");
         JsonTool readset = new JsonTool();
-        //try (InputStream in1 = Main.class.getClassLoader().getResourceAsStream("resources/file.txt")) {
 
-        //}
-        //Map a = readset.parseJSONToMap();
-        //System.out.println(readset.);
         int quit = 0;
         while (quit == 0){
             Scanner scan = new Scanner(System.in);
