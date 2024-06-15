@@ -9,6 +9,11 @@ fun main(args: Array<String>){
         tool.PrintTimeSleep("检测：本程序正在"+tool.GetOS()+"操作系统上运行。")
         tool.PrintTimeSleep("您可以输入“help”获取命令帮助，或者输入“quit”以退出程序。")
         tool.PrintTimeSleep("您还可以输入其他命令，例如“login”或“create”。")
+        var quit = false
+        while (quit == false){
+            print("You> ")
+            val cmd = readLine()
+        }
     }else{
         tool.PrintTimeSleep("该功能正在施工ing...")
     }
