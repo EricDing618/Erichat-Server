@@ -1,4 +1,5 @@
 package org.ericding618
 
-class Main {
+fun main(args:Array<String>){
+    println("hello")
 }
