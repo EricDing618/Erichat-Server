@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.*;
 import java.lang.String;
 
-public class Main{
+public class old {
     double VERSION = 0.1; //服务端的版本
     Tools tool = new Tools();
 
@@ -44,7 +44,7 @@ public class Main{
     }
 
     public static void main(String[] args) { // 运行
-        Main run = new Main();
+        old run = new old();
         try {
             run.App();
         }catch (IOException e){
