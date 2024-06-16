@@ -12,7 +12,14 @@ fun main(args: Array<String>){
         var quit = false
         while (quit == false){
             print("You> ")
-            val cmd = readLine()
+            val input = readLine()
+            if (input != null){
+                if (input == "quit"){
+                    quit = true
+                }else{
+                    val cmd = Cmds()
+                }
+            }
         }
     }else{
         tool.PrintTimeSleep("该功能正在施工ing...")
