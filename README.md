@@ -17,4 +17,4 @@
 - `create <name>`：创建一个新的服务端。
 - `say <text>`：聊天。
 - `msg <username> <text>`：私聊。
-- `ban <username> <seconds=60>`：禁言`<seconds>`秒，默认值为60。
+- `ban <username> <seconds=60>`：禁言 `<seconds>` 秒，默认值为60。
