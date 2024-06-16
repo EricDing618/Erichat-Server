@@ -1,5 +1,7 @@
 package org.ericding618
 
-class cmd{
+class Cmd{
+    fun give(cmd: String){
 
+    }
 }

@@ -17,7 +17,8 @@ fun main(args: Array<String>){
                 if (input == "quit"){
                     quit = true
                 }else{
-                    val cmd = Cmds()
+                    val cmd = Cmd()
+                    cmd.give("")
                 }
             }
         }
