@@ -22,8 +22,10 @@ fun main(args: Array<String>){
                 if (input == "quit"){
                     quit = true //退出程序
                 }else{
-                    val cmd = Cmd()
-                    cmd.give(input) //把命令交给“./Cmds.kt”处理
+                    val cmd = input.split(" ")
+                    when (cmd){
+
+                    }
                 }
             }
         }
