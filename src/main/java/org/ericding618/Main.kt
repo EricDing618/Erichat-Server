@@ -12,6 +12,9 @@ fun main(args: Array<String>){
         tool.PrintTimeSleep("您可以输入“help”获取命令帮助，或者输入“quit”以退出程序。")
         tool.PrintTimeSleep("您还可以输入其他命令，例如“login”或“create”。")
 
+        //初始化
+        var login = false
+
         //循环等待输入命令
         var quit = false
         while (quit == false){
@@ -23,8 +26,10 @@ fun main(args: Array<String>){
                     quit = true //退出程序
                 }else{
                     val cmd = input.split(" ")
-                    when (cmd){
-
+                    when (cmd[0]){
+                        "login" -> {
+                            login = true
+                        }
                     }
                 }
             }
